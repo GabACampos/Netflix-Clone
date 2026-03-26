@@ -1,0 +1,361 @@
+/* ===================================
+   ESTILOS NETFLIX - RESET & VARIÁVEIS
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --netflix-red: #e50914;
+    --netflix-dark: #141414;
+    --netflix-black: #000000;
+    --netflix-gray: #333333;
+    --netflix-light-gray: #b3b3b3;
+    --netflix-white: #ffffff;
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ===================================
+   BODY & BACKGROUND
+   =================================== */
+
+body {
+    background: var(--netflix-black);
+    background-attachment: fixed;
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--netflix-white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
+}
+
+/* ===================================
+   MAIN CONTAINER
+   =================================== */
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+/* ===================================
+   HEADER & TITLE
+   =================================== */
+
+header {
+    margin-bottom: 60px;
+    animation: fadeInDown 0.6s ease;
+}
+
+h1 {
+    font-size: 3.2rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+    color: var(--netflix-white);
+    text-shadow: none;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: var(--netflix-light-gray);
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    margin-top: 8px;
+}
+
+/* ===================================
+   PROFILES SECTION
+   =================================== */
+
+.profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 0.6s ease 0.1s backwards;
+}
+
+/* ===================================
+   INDIVIDUAL PROFILE CARD (BUTTON)
+   =================================== */
+
+.profile {
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    padding: 0;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 160px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Efeito de hover - destaque */
+.profile:hover {
+    transform: scale(1.05);
+}
+
+.profile:hover .profile-image {
+    border: 3px solid var(--netflix-white);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Estado ativo/focus */
+.profile:focus {
+    outline: 2px solid var(--netflix-white);
+    outline-offset: 4px;
+}
+
+/* ===================================
+   PROFILE FIGURE
+   =================================== */
+
+.profile figure {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ===================================
+   PROFILE IMAGE
+   =================================== */
+
+.profile-image {
+    width: 100%;
+    max-width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: var(--transition);
+    border: 3px solid transparent;
+    box-shadow: var(--shadow);
+    display: block;
+}
+
+/* ===================================
+   PROFILE NAME (FIGCAPTION)
+   =================================== */
+
+.profile figcaption {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    transition: var(--transition);
+    color: var(--netflix-light-gray);
+    text-align: center;
+    width: 100%;
+    max-width: 160px;
+}
+
+.profile:hover figcaption {
+    color: var(--netflix-white);
+}
+
+/* ===================================
+   ANIMAÇÕES
+   =================================== */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(229, 9, 20, 0);
+    }
+}
+
+/* ===================================
+   SKIP LINK - ACESSIBILIDADE
+   =================================== */
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--netflix-red);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--netflix-gray);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+footer small {
+    display: block;
+    letter-spacing: 0.3px;
+}
+
+/* ===================================
+   HEADER DESCRIPTION
+   =================================== */
+
+header p {
+    font-size: 1rem;
+    color: #999;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+/* ===================================
+   PROFILE ACTIONS
+   =================================== */
+
+.profile-actions {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.manage-profiles-btn {
+    background: transparent;
+    border: 1px solid var(--netflix-gray);
+    color: var(--netflix-light-gray);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+    outline: none;
+}
+
+.manage-profiles-btn:hover {
+    border-color: var(--netflix-white);
+    color: var(--netflix-white);
+}
+
+.manage-profiles-btn:focus {
+    outline: 2px solid var(--netflix-white);
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    header {
+        margin-bottom: 40px;
+    }
+
+    .profiles {
+        gap: 30px;
+    }
+
+    .profile img {
+        max-width: 120px;
+        height: 120px;
+    }
+
+    .profile figcaption {
+        font-size: 1rem;
+    }
+
+    .profile-actions {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    header {
+        margin-bottom: 30px;
+    }
+
+    .profiles {
+        gap: 20px;
+    }
+
+    .profile {
+        max-width: 120px;
+    }
+
+    .profile img {
+        max-width: 100px;
+        height: 100px;
+    }
+
+    .profile figcaption {
+        font-size: 0.9rem;
+    }
+
+    .profile-actions {
+        margin-top: 30px;
+    }
+
+    .manage-profiles-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
