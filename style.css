@@ -200,6 +200,12 @@ header p {
     color: var(--netflix-white);
 }
 
+/* Links de perfil */
+a.profile {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* ===================================
    ANIMAÇÕES
    =================================== */
